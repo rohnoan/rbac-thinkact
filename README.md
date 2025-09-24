@@ -26,7 +26,7 @@ admin permissions(of a particular org)-
 get /org/:id/users get all users
 get /org/:id/users/:userId get one user
 post /org/:id/invite invite new users
-patch /org/:id/users/userId update user(make admin remove admin)
+patch /org/:id/users/:userId update user(make admin remove admin)
 delete /org/:id/users/:userId delete user
 
 member permissions(of a particular org)-

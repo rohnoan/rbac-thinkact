@@ -1,4 +1,4 @@
-import { Controller,Get,Post,Param,Body,Delete } from '@nestjs/common';
+import { Controller,Get,Post,Param,Body,Delete, Patch } from '@nestjs/common';
 
 @Controller('organizations')
 export class OrganizationsController {
@@ -23,12 +23,12 @@ export class OrganizationsController {
         return ` delete org ${id}`
     }
 
-    @Post('id')
+    @Patch(':id')
     editOrganizationById(@Param('id')id:string){
         return `edited org ${id}`
     }
 
-    @Post('id')
+    @Post(':id/invite')
     inviteMemberToOrganizationById(@Param('id')id:string){
         return `invited admin to ${id}`
     }
