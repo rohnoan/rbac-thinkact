@@ -1,16 +1,16 @@
-// src/users/dto/create-user.dto.ts
 import { IsString, IsNotEmpty, IsIn } from 'class-validator';
+import { Role } from '../schema/user.schema';
 
 export class CreateUserDto {
   @IsString()
   @IsNotEmpty()
-  clerkId: string; // Clerk user ID (from Clerk API after invite/signup)
+  clerkId: string; // Clerk user ID
+
+  @IsString()
+  @IsIn(['superadmin', 'admin', 'member'])
+  //role: Role;
 
   @IsString()
   @IsNotEmpty()
-  orgClerkId: string; // The org this user belongs to (Clerk org ID)
-
-  @IsString()
-  @IsIn(['admin', 'member'])
-  role: 'admin' | 'member'; // initial RBAC role
+  orgClerkId: string; // Clerk org ID this user belongs to
 }

@@ -10,5 +10,5 @@ export class InviteUserDto {
 
   @IsString()
   @IsOptional()
-  role?: 'admin' | 'member';
+  role?: 'admin' | 'member'='member';
 }

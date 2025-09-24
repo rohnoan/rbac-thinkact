@@ -21,6 +21,7 @@ post /org create new org
 patch /org/:id edit org 
 delete /org/:id delete org
 post /org/:id/invite invite admin
+get /users get all users
 
 admin permissions(of a particular org)-
 get /org/:id/users get all users
